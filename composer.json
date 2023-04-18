@@ -1,0 +1,36 @@
+{
+    "name": "culture-trip/php-test",
+    "description": "Technical test for the PHP Developer role.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "PHP Test",
+            "email": "cms-platform@theculturetrip.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^4.11",
+        "slim/http": "^0.4.0",
+        "slim/psr7": "^1.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "roave/security-advisories": "dev-latest",
+        "http-interop/http-factory-guzzle": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "start": "php -S localhost:8888 -t public",
+        "test": "phpunit --configuration phpunit.xml",
+        "test:coverage": "phpunit --configuration phpunit.xml --coverage-clover build/logs/clover.xml --coverage-html build/coverage"
+    }
+}
